@@ -1,102 +1,267 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <title>Survey form</title>
-  <link rel="stylesheet" href="main.css">
-   <link href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Quicksand:400,600&display=swap" rel="stylesheet">
-</head>
+  <head>
+    <meta charset="utf-8" />
+    <title>Survey form</title>
+    <link rel="stylesheet" href="main.css" />
+    <link rel="icon" type="image/png" href="./favicon.png" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Quicksand:400,600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-<body>
+  <body>
+    <div id="main">
+      <header class="center-text">
+        <h1 id="title">caffeinated pixels survey form</h1>
+        <p id="description">
+          Thank you for your interest in caffeinated pixels. Please tell us a
+          little bit about yourself.
+        </p>
+      </header>
 
-  <div id="main">
-    <header class="center-text">
-         <h1 id="title">caffeinated pixels survey form</h1>
-      <p id="description">Thank you for your interest in caffeinated pixels. Please tell us a little bit about yourself.</p>
-    </header>
+      <form id="survey-form">
+        <div class="form-section">
+          <!-- NAME SECTION -->
+          <label id="name-label" for="name"
+            >Name:<span class="asterix">*</span></label
+          >
+          <input
+            id="name"
+            class="input-style input-size"
+            type="text"
+            name="name"
+            placeholder="Enter your name"
+            required
+          />
+        </div>
 
-    <form id="survey-form">
-      <div class="form-section"> <!-- NAME SECTION -->
-        <label id="name-label" for="name">Name:<span class="asterix">*</span></label>
-        <input id="name" class="input-style input-size" type="text" name="name" placeholder="Enter your name" required>
-      </div>
+        <div class="form-section">
+          <!-- EMAIL SECTION -->
+          <label id="email-label" for="email"
+            >Email:<span class="asterix">*</span></label
+          >
+          <input
+            id="email"
+            class="input-style input-size"
+            type="email"
+            name="email"
+            placeholder="Enter a valid email address"
+            required
+          />
+        </div>
 
-      <div class="form-section"> <!-- EMAIL SECTION -->
-        <label id="email-label" for="email">Email:<span class="asterix">*</span></label>
-        <input id="email" class="input-style input-size" type="email" name="email" placeholder="Enter a valid email address" required>
-      </div>
+        <div class="form-section">
+          <!-- NUMBER SECTION -->
+          <label id="number-label" for="number"
+            >Choose an integer between 12 and 4327:
+            <span class="smallertext">(optional)</span></label
+          >
+          <input
+            id="number"
+            class="input-style input-size"
+            type="number"
+            name="number-choice"
+            placeholder="Your number choice"
+            min="12"
+            max="4327"
+          />
+        </div>
 
-      <div class="form-section"> <!-- NUMBER SECTION -->
-        <label id="number-label" for="number">Choose an integer between 12 and 4327: <span class="smallertext">(optional)</span></label>
-        <input id="number" class="input-style input-size" type="number" name="number-choice" placeholder="Your number choice" min="12" max="4327">
-      </div>
+        <div class="form-section">
+          <!-- DROPDOWN SECTION -->
+          <label for="dropdown" class="block"
+            >What is your current occupation?<span class="asterix"
+              >*</span
+            ></label
+          >
+          <select
+            id="dropdown"
+            class="input-style input-size"
+            name="occupation"
+            required
+          >
+            <option value="" disabled selected>Choose an occupation</option>
+            <!-- starting value -->
+            <option value="POTUS">President of the United States</option>
+            <option value="casino carpet designer"
+              >casino carpet designer</option
+            >
+            <option value="freelance scientist">freelance scientist</option>
+            <option value="soccer pundit">soccer pundit</option>
+            <option value="video game character">video game character</option>
+            <option value="Elvis impersonator">Elvis impersonator</option>
+          </select>
+        </div>
 
-      <div class="form-section"> <!-- DROPDOWN SECTION -->
-        <label for="dropdown" class="block">What is your current occupation?<span class="asterix">*</span></label>
-        <select id="dropdown" class="input-style input-size" name="occupation" required>
-          <option value="" disabled selected>Choose an occupation</option> <!-- starting value -->
-          <option value="POTUS">President of the United States</option>
-          <option value="casino carpet designer">casino carpet designer</option>
-          <option value="freelance scientist">freelance scientist</option>
-          <option value="soccer pundit">soccer pundit</option>
-          <option value="video game character">video game character</option>
-          <option value="Elvis impersonator">Elvis impersonator</option>
-        </select>
-      </div>
+        <!-- RADIO BUTTON SECTION -->
+        <fieldset class="form-section">
+          <!-- Added in fieldset wrapper for accessibilty reasons -->
+          <legend>
+            Are you a robot killing machine from the future?<span
+              class="asterix"
+              >*</span
+            >
+          </legend>
+          <!-- Nesting <input> inside <label> keeps them on same line when using display: block -->
+          <!-- Don't need for or id attributes because association is implicit when nested -->
+          <label
+            ><input
+              class="radio-style"
+              type="radio"
+              name="robot"
+              value="yes"
+              checked
+            />Yes</label
+          >
 
-      <!-- RADIO BUTTON SECTION -->
-      <fieldset class="form-section"> <!-- Added in fieldset wrapper for accessibilty reasons -->
-        <legend>Are you a robot killing machine from the future?<span class="asterix">*</span></legend>
-        <!-- Nesting <input> inside <label> keeps them on same line when using display: block -->
-        <!-- Don't need for or id attributes because association is implicit when nested -->
-        <label><input class="radio-style" type="radio" name="robot" value="yes" checked>Yes</label>
+          <label
+            ><input
+              class="radio-style"
+              type="radio"
+              name="robot"
+              value="no"
+            />No</label
+          >
 
-        <label><input class="radio-style" type="radio" name="robot" value="no">No</label>
+          <label
+            ><input
+              class="radio-style"
+              type="radio"
+              name="robot"
+              value="repeat"
+            />Can you repeat the question?</label
+          >
+        </fieldset>
 
-        <label><input class="radio-style" type="radio" name="robot" value="repeat">Can you repeat the question?</label>
-      </fieldset>
+        <fieldset class="form-section">
+          <!-- CHECKBOX SECTION -->
+          <legend>
+            Which of the following activities interest you?
+            <span class="smallertext">(select all that apply)</span>
+          </legend>
+          <label
+            ><input
+              class="radio-style"
+              type="checkbox"
+              name="activities"
+              value="snowmen"
+            />Building impossibly large snowmen</label
+          >
 
-      <fieldset class="form-section"> <!-- CHECKBOX SECTION -->
-        <legend>Which of the following activities interest you? <span class="smallertext">(select all that apply)</span></legend>
-        <label><input class="radio-style" type="checkbox" name="activities" value="snowmen">Building impossibly large snowmen</label>
+          <label
+            ><input
+              class="radio-style"
+              type="checkbox"
+              name="activities"
+              value="cake"
+            />Eating delicious moist cake</label
+          >
 
-        <label><input class="radio-style" type="checkbox" name="activities" value="cake">Eating delicious moist cake</label>
+          <label
+            ><input
+              class="radio-style"
+              type="checkbox"
+              name="activities"
+              value="coffee"
+            />Drinking gallons of damn fine coffee</label
+          >
 
-        <label><input class="radio-style" type="checkbox" name="activities" value="coffee">Drinking gallons of damn fine coffee</label>
+          <label
+            ><input
+              class="radio-style"
+              type="checkbox"
+              name="activities"
+              value="time-space"
+            />Experimenting with time and space</label
+          >
 
-        <label><input class="radio-style" type="checkbox" name="activities" value="time-space">Experimenting with time and space</label>
+          <label
+            ><input
+              class="radio-style"
+              type="checkbox"
+              name="activities"
+              value="rollercoaster"
+            />Riding rickety rollercoasters</label
+          >
 
-        <label><input class="radio-style" type="checkbox" name="activities" value="rollercoaster">Riding rickety rollercoasters</label>
+          <label
+            ><input
+              class="radio-style"
+              type="checkbox"
+              name="activities"
+              value="murder"
+            />Solving murder mysteries</label
+          >
 
-        <label><input class="radio-style" type="checkbox" name="activities" value="murder">Solving murder mysteries</label>
+          <label
+            ><input
+              class="radio-style"
+              type="checkbox"
+              name="activities"
+              value="rickman"
+            />Doing bad Alan Rickman impersonations</label
+          >
 
-        <label><input class="radio-style" type="checkbox" name="activities" value="rickman">Doing bad Alan Rickman impersonations</label>
+          <label
+            ><input
+              class="radio-style"
+              type="checkbox"
+              name="activities"
+              value="amiga"
+            />Playing classic Commodore Amiga games</label
+          >
+        </fieldset>
 
-        <label><input class="radio-style" type="checkbox" name="activities" value="amiga">Playing classic Commodore Amiga games</label>
-      </fieldset>
+        <div class="form-section">
+          <!-- TEXTAREA SECTION -->
+          <label for="lifestory"
+            >Please feel free to tell us your entire lifestory in 500 characters
+            or less: <span class="smallertext">(optional)</span></label
+          >
+          <textarea
+            id="lifestory"
+            class="input-style"
+            name="lifestory"
+            placeholder="Write your lifestory here ..."
+            maxlength="500"
+          ></textarea>
+          <!-- box size set by css-->
+        </div>
 
-      <div class="form-section"> <!-- TEXTAREA SECTION -->
-        <label for="lifestory">Please feel free to tell us your entire lifestory in 500 characters or less: <span class="smallertext">(optional)</span></label>
-        <textarea id="lifestory" class="input-style" name="lifestory" placeholder="Write your lifestory here ..." maxlength="500"></textarea> <!-- box size set by css-->
-      </div>
+        <div class="form-section">
+          <!-- SUBMIT BUTTON SECTION -->
+          <input
+            id="submit"
+            class="input-style input-size button"
+            type="submit"
+            value="Submit responses"
+          />
+        </div>
 
-      <div class="form-section"> <!-- SUBMIT BUTTON SECTION -->
-        <input id="submit" class="input-style input-size button" type="submit" value="Submit responses">
-      </div>
+        <div class="required">
+          <!-- asterix footnote -->
+          <p><span class="asterix">*</span> required field</p>
+        </div>
+      </form>
+      <!-- END OF FORM -->
 
-      <div class="required"> <!-- asterix footnote -->
-      <p><span class="asterix">*</span> required field</p>
-      </div>
-
-    </form> <!-- END OF FORM -->
-
-    <footer class="center-text">
-      <p>Written, coded and abused by <a href="https://www.freecodecamp.org/caffeinatedpixels" target=”_blank”>Stevie Gill</a></p>
-    </footer>
-
-  </div> <!-- END OF id="main" SECTION -->
-
-</body>
-
+      <footer class="center-text">
+        <p>
+          Written, coded and abused by
+          <a
+            href="https://www.freecodecamp.org/caffeinatedpixels"
+            target="”_blank”"
+            >Stevie Gill</a
+          >
+        </p>
+      </footer>
+    </div>
+    <!-- END OF id="main" SECTION -->
+  </body>
 </html>
